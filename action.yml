@@ -38,6 +38,6 @@ runs:
             URL: ${{ github.event.pull_request.html_url }}
         run: |
             cd ActionTest
-            response=$(python dist/main.py)
+            response="test"
             echo "${response}" > body.txt
             gh pr comment --body-file body.txt "${URL}"
