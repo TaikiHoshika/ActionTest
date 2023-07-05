@@ -19,12 +19,12 @@ runs:
             python-version: "3.8"
             architecture: "x64"
 
-          - name: Run Python Script
-            shell: bash
-            env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                URL: ${{ github.event.pull_request.html_url }}
-            run: |
-                response=$(python dist/main.py)
-                echo "${response}" > body.txt
-                gh pr comment --body-file body.txt "${URL}"
+      - name: Run Python Script
+        shell: bash
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            URL: ${{ github.event.pull_request.html_url }}
+        run: |
+            response=$(python dist/main.py)
+            echo "${response}" > body.txt
+            gh pr comment --body-file body.txt "${URL}"
