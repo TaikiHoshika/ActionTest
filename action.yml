@@ -1,4 +1,4 @@
-name: "Test Action"
+name: "SendTestActionByTaiki"
 description: "This is a example code."
 branding:
   icon: "activity"
