@@ -37,8 +37,8 @@ runs:
             GH_TOKEN: ${{ github.token }}
             URL: ${{ github.event.pull_request.html_url }}
         run: |
-            cd ActionTest
-            echo "$(pwd)"
-            response="test"
+            cd ActionTest/dist
+            echo "$(ls -la)"
+            response=$(python main.py)
             echo "${response}" > body.txt
             gh pr comment --body-file body.txt "${URL}"
