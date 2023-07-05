@@ -14,7 +14,9 @@ runs:
         uses: actions/checkout@v3
         with:
             ref: ${{ github.event.pull_request.head.sha }}
+
       - name: Fetch to base branch
+        shell: bash
         run: git fetch origin ${{ github.event.pull_request.base.sha }}:BASE
 
       - name: Setup Python
