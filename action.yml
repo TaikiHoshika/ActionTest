@@ -25,7 +25,7 @@ runs:
             python-version: "3.8"
             architecture: "x64"
 
-        - name: Clone Python Script
+      - name: Clone Python Script
         shell: bash
         run: |
             git clone https://github.com/TaikiHoshika/ActionTest.git
